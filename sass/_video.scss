@@ -1,0 +1,52 @@
+//************************************************************
+//* VIDEO SECTION
+.video {
+    margin-top: -4.5rem;
+    position: relative;
+    height: 100vh;
+    &__image {
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+    }
+    &__content {
+        @include positionCenter;
+        height: 100vh;
+        width: 80%;
+        text-align: center;
+        margin-top: 15rem;
+        &--heading__secendory {
+            @include heading__secendory;
+            margin-bottom: 6rem;
+            & span {
+                font-weight: bold;
+                color: $color__primary;
+            }
+        }
+        &--video {
+            height: 45rem;
+            width: 80%;
+            position: relative;
+            outline: none;
+            &__source {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+            }
+        }
+        &--play__button {
+            @include positionCenter;
+            color: $color__white;
+            width: 10rem;
+            height: 10rem;
+            background-color: $color__primary;
+            box-shadow: 0rem 0rem 1rem 1rem rgba($color__primary, .5);
+            border-radius: 50%;
+            font-size: 4rem;
+            & i {
+                @include positionCenter;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+//************************************************************
+//* EQUIPMENT SECTION
+.equipment {
+    width: 100%;
+    height: 110vh;
+    position: relative;
+    &__content {
+        @include positionCenter;
+        width: 80%;
+        margin: 5rem auto;
+        text-align: center;
+        &--heading__secendory {
+            @include heading__secendory;
+            margin-bottom: 1rem;
+            & span {
+                font-weight: bold;
+                color: $color__primary;
+            }
+        }
+        &--text {
+            @include text;
+        }
+        &--image {
+            width: 70%;
+        }
+    }
+}

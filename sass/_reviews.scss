@@ -1,0 +1,85 @@
+//************************************************************
+//* REVIEWS SECTION
+.review {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin-top: -5rem;
+    &__bgimage {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &__content {
+        @include positionCenter;
+        width: 80%;
+        height: 70vh;
+        display: flex;
+        &--left {
+            width: 50%;
+            text-align: center;
+            margin: 1.5rem;
+            &__image {
+                width: 95%;
+                height: 80%;
+                margin-bottom: 4rem;
+                &--img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &--text {
+                @include text;
+                color: $color__white;
+                font-size: 1.8rem;
+            }
+        }
+        &--right {
+            width: 50%;
+            margin: 1.5rem;
+            &__container {
+                width: 90%;
+                height: 45%;
+                &--heading__secendory {
+                    @include heading__secendory;
+                    font-weight: bold;
+                    color: $color__white;
+                    margin-bottom: 1rem;
+                }
+                &--text {
+                    @include text;
+                    color: $color__white;
+                }
+                &--icon {
+                    color: $color__white;
+                    width: 70%;
+                    & i {
+                        margin-right: 2rem;
+                        &:last-child {
+                            color: rgba($color__white, .5);
+                        }
+                    }
+                }
+            }
+            &__form {
+                background-color: $color__white;
+                width: 90%;
+                border-radius: 1rem;
+                text-align: right;
+                padding: 2rem;
+                &--textarea {
+                    width: 95%;
+                    display: block;
+                    resize: none;
+                    padding: 1rem;
+                }
+                & button {
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+}

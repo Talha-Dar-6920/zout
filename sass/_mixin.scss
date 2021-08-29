@@ -1,0 +1,28 @@
+@mixin heading__primary--light {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+@mixin heading__secendory {
+    font-size: 5rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin-bottom: 3rem;
+    color: $color__black--light;
+}
+
+@mixin text {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: $color__grey--light;
+}
+
+@mixin positionCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

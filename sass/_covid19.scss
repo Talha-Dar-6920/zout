@@ -1,0 +1,62 @@
+//************************************************************
+//* COVID19 SECTION
+.covid19 {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    &__content {
+        width: 50%;
+        margin-top: 12rem;
+        margin-left: 14rem;
+        &--heading__secendory {
+            @include heading__secendory;
+            color: $color__primary;
+            font-weight: bold;
+            font-size: 4.4rem;
+            & span {
+                color: $color__black;
+                font-weight: 100;
+            }
+        }
+        &--text {
+            @include text;
+            width: 90%;
+            font-size: 1.7rem;
+            color: $color__black--secendory;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        &--list {
+            list-style: none;
+            position: relative;
+            &__item {
+                @include text;
+                color: $color__black--secendory;
+                width: 80%;
+                margin-left: 3rem;
+                &::before {
+                    content: '';
+                    background-image: radial-gradient($color__primary 20%, $color__white 30%);
+                    width: 1.3rem;
+                    height: 1.3rem;
+                    position: absolute;
+                    margin-top: 0.2rem;
+                    left: 0rem;
+                    border-radius: 50%;
+                    border: .2rem solid $color__primary;
+                }
+            }
+        }
+    }
+    &__image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 48%;
+        z-index: -1;
+        &--img {
+            width: 100%;
+        }
+    }
+}

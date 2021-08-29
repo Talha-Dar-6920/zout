@@ -1,0 +1,31 @@
+.btn {
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 1.2rem 2.5rem;
+    text-transform: uppercase;
+    color: $color__grey--light;
+    outline: none;
+    transition: color .3s ease;
+    &--main {
+        background-color: $color__primary;
+        border-radius: 1rem;
+        color: $color__white;
+        font-weight: bold;
+        position: relative;
+        border: 2px solid $color__primary;
+        transition: background-color .5s ease;
+        &:hover {
+            background-color: $color__white;
+        }
+    }
+    & span {
+        font-size: 1rem;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    &:hover {
+        color: $color__primary;
+    }
+}
