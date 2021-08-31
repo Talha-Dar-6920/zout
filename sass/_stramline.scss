@@ -59,6 +59,10 @@
       & span {
         font-weight: bold;
       }
+
+      @include res(phone) {
+        font-size: 4rem;
+      }
     }
     &--container {
       display: flex;

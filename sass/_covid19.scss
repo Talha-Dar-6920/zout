@@ -47,6 +47,10 @@
       @include res(tab-port) {
         font-size: 6rem;
       }
+
+      @include res(phone) {
+        font-size: 4rem;
+      }
     }
     &--text {
       @include text;

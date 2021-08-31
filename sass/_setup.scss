@@ -1,96 +1,163 @@
 //************************************************************
 //* SETUP SECTION
 .setup {
-    margin-top: 20rem;
-    height: 110vh;
-    position: relative;
-    &__content {
-        @include positionCenter;
-        width: 80%;
-        text-align: center;
-        &--heading__secendory {
-            @include heading__secendory;
-            & span {
-                font-size: 90%;
-                font-weight: bold;
-                color: $color__primary;
-            }
-        }
-        &--info {
-            display: flex;
-            justify-content: space-between;
-            &__container {
-                width: 20%;
-                position: relative;
-                &:nth-child(odd) {
-                    margin-top: 12rem;
-                }
-                &:nth-child(odd)::before {
-                    content: '';
-                    background-image: url(../images/arrow-up.png);
-                    background-size: contain;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    height: 8rem;
-                    width: 10rem;
-                    right: -9rem;
-                    top: 1rem;
-                    position: absolute;
-                }
-                &:nth-child(2)::before {
-                    content: '';
-                    height: 8rem;
-                    width: 10rem;
-                    right: -10rem;
-                    top: 5rem;
-                    background-image: url(../images/arrow-down.png);
-                    background-size: contain;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    position: absolute;
-                }
-                &--image {
-                    width: 17rem;
-                    height: 17rem;
-                    border-radius: 50%;
-                    position: relative;
-                    border: 2px dashed $color__primary;
-                    margin: 0 auto 4rem;
-                    &__container {
-                        @include positionCenter;
-                        width: 80%;
-                        height: 80%;
-                        border-radius: 50%;
-                        border: .8rem solid rgba($color__primary, .3);
-                        background-image: radial-gradient($color__white--secendory 50%, $color__white 50%);
-                        transition: 1s;
-                        // &--bg {
-                        //     background-image: radial-gradient($color__primary, $color__primary);
-                        // }
-                        &:hover {
-                            background-image: radial-gradient($color__primary, $color__primary);
-                        }
-                        &--img {
-                            @include positionCenter;
-                            width: 90%;
-                            height: 90%;
-                            border-radius: 50%;
-                            background-size: cover;
-                            background-position: center;
-                        }
-                    }
-                }
-                &--heading__tertiary {
-                    font-size: 2rem;
-                    text-transform: uppercase;
-                    margin-bottom: 2rem;
-                    color: $color__black--secendory;
-                    font-weight: bold;
-                }
-                &--text {
-                    @include text;
-                }
-            }
-        }
+  margin-top: 10rem;
+  height: 100vh;
+  position: relative;
+
+  @include res(tab-port) {
+    height: 160vh;
+  }
+
+  @include res(phone) {
+    height: 200vh;
+  }
+  &__content {
+    @include positionCenter;
+    width: 80%;
+    text-align: center;
+
+    @media only screen and (max-width: 950px) {
+      width: 90%;
     }
+
+    @include res(tab-port) {
+      width: 80%;
+    }
+    &--heading__secendory {
+      @include heading__secendory;
+      & span {
+        font-size: 90%;
+        font-weight: bold;
+        color: $color__primary;
+      }
+
+      @media only screen and (max-width: 850px) {
+        font-size: 4.5rem;
+      }
+
+      @include res(phone) {
+        font-size: 4rem;
+      }
+    }
+    &--info {
+      display: flex;
+      justify-content: space-between;
+
+      @include res(tab-port) {
+        flex-direction: column;
+        align-items: center;
+      }
+      &__container {
+        width: 20%;
+        position: relative;
+
+        @include res(tab-port) {
+          width: 90%;
+          margin-top: 4rem;
+          padding: 4rem;
+          border-bottom: 1px solid grey;
+        }
+
+        @include res(phone) {
+          width: 100%;
+          padding: 5rem 0;
+        }
+
+        &:nth-child(odd) {
+          margin-top: 12rem;
+
+          @include res(tab-port) {
+            margin-top: 4rem;
+          }
+        }
+        &:nth-child(odd)::before {
+          content: '';
+          background-image: url(../images/arrow-up.png);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 8rem;
+          width: 10rem;
+          right: -9rem;
+          top: 1rem;
+          position: absolute;
+
+          @include res(tab-port) {
+            display: none;
+          }
+        }
+        &:nth-child(2)::before {
+          content: '';
+          height: 8rem;
+          width: 10rem;
+          right: -10rem;
+          top: 5rem;
+          background-image: url(../images/arrow-down.png);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          position: absolute;
+
+          @include res(tab-port) {
+            display: none;
+          }
+        }
+        &--image {
+          width: 17rem;
+          height: 17rem;
+          border-radius: 50%;
+          position: relative;
+          border: 2px dashed $color__primary;
+          margin: 0 auto 4rem;
+          &__container {
+            @include positionCenter;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            border: 0.8rem solid rgba($color__primary, 0.3);
+            background-image: radial-gradient(
+              $color__white--secendory 50%,
+              $color__white 50%
+            );
+
+            &--img {
+              @include positionCenter;
+              width: 90%;
+              height: 90%;
+              border-radius: 50%;
+              background-size: cover;
+              background-position: center;
+            }
+          }
+        }
+        &--heading__tertiary {
+          font-size: 2rem;
+          text-transform: uppercase;
+          margin-bottom: 2rem;
+          color: $color__black--secendory;
+          font-weight: bold;
+
+          @include res(tab-port) {
+            font-size: 2.5rem;
+          }
+
+          @include res(phone) {
+            font-size: 3rem;
+          }
+        }
+        &--text {
+          @include text;
+
+          @include res(tab-port) {
+            font-size: 2rem;
+          }
+
+          @include res(phone) {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
 }
