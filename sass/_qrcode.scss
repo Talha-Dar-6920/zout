@@ -1,48 +1,102 @@
 //************************************************************
 //* QR-CODE SECTION
 .code {
-    display: flex;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  @include res(tab-port) {
+    flex-direction: column;
+    margin-top: 10rem;
+    height: 85vh;
+  }
+
+  @include res(phone) {
+    height: 60vh;
+  }
+
+  &--image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    z-index: -1;
+  }
+  &__content {
+    width: 40%;
+    z-index: 1;
+    margin: 20% 0 0 10%;
     position: relative;
-    &--image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+
+    @include res(tab-port) {
+      width: 90%;
+      margin: 20rem 10rem;
     }
-    &__content {
-        width: 40%;
-        z-index: 1;
-        margin: 33vh 0 0 10%;
-        &--heading__secendory {
-            @include heading__secendory;
-            font-size: 4.5rem;
-            & span {
-                font-weight: bold;
-                color: $color__primary;
-            }
-        }
-        &--text {
-            @include text;
-            width: 85%;
-            text-align: justify;
-            line-height: 1.6;
-        }
-        &--btn {
-            margin-top: 5rem;
-        }
+
+    @include res(phone) {
+      margin: 20rem 5rem;
     }
-    &__image {
-        width: 40%;
-        position: relative;
-        &--img {
-            width: 100%;
-            position: absolute;
-            top: 20%;
-            margin-left: 5rem;
-        }
+
+    @media only screen and (max-width: 450px) {
+      margin: 15rem 5rem;
     }
+    &--heading__secendory {
+      @include heading__secendory;
+      font-size: 4.5rem;
+      & span {
+        font-weight: bold;
+        color: $color__primary;
+      }
+    }
+    &--text {
+      @include text;
+      width: 85%;
+      text-align: justify;
+      line-height: 1.6;
+
+      @include res(tab-land) {
+        font-size: 2rem;
+        width: 95%;
+      }
+
+      @include res(tab-port) {
+        font-size: 2.5rem;
+      }
+    }
+    &--btn {
+      margin-top: 5rem;
+
+      & a {
+        @include res(tab-land) {
+          font-size: 2rem;
+        }
+
+        @include res(phone) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+  &__image {
+    width: 40%;
+    position: relative;
+
+    @include res(tab-port) {
+      position: absolute;
+      bottom: 50%;
+      right: 20%;
+    }
+
+    @include res(phone) {
+      display: none;
+    }
+    &--img {
+      width: 100%;
+      position: absolute;
+      top: 20%;
+      margin-left: 5rem;
+    }
+  }
 }
