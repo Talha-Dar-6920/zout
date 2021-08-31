@@ -18,7 +18,7 @@
     top: 30%;
     width: 35%;
 
-    @include res(tab-land) {
+    @include res(tab-port) {
       @include positionCenter;
       width: 50%;
       height: 35rem;
