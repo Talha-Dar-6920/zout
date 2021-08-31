@@ -1,28 +1,63 @@
 @mixin heading__primary--light {
-    font-size: 4rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 300;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 300;
 }
 
 @mixin heading__secendory {
-    font-size: 5rem;
-    text-transform: uppercase;
-    font-weight: 100;
-    margin-bottom: 3rem;
-    color: $color__black--light;
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  margin-bottom: 3rem;
+  color: $color__black--light;
 }
 
 @mixin text {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    color: $color__grey--light;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: $color__grey--light;
+
+  @include res(tab-port) {
+    font-size: 1.8rem;
+  }
 }
 
 @mixin positionCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin res($device) {
+  @if $device==phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $device==tab-port {
+    @media only screen and (max-width: 50em) {
+      @content;
+    } //900px
+  }
+  @if $device==tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $device==big {
+    @media only screen and (min-width: 117.5) {
+      @content;
+    } //1800px
+  }
 }

@@ -1,108 +1,135 @@
 //************************************************************
 //* HEADER
 .header {
-    background-image: url(../images/header.png);
-    background-size: cover;
-    background-position: center;
-    height: 90vh;
-    border-top: 1px solid rgba(124, 122, 122, 0.342);
-    &__content {
-        display: inline-block;
-        position: absolute;
-        left: 15rem;
-        top: 30%;
-        width: 30%;
-        &--heading__primery {
-            font-size: 3rem;
-            text-transform: uppercase;
-            font-weight: 100;
-            margin-bottom: 1rem;
-            color: $color__black;
-            font-family: Tahoma, sans-serif;
-            & span {
-                font-size: 5.6rem;
-                color: $color__primary;
-            }
-        }
-        &--text {
-            font-size: 1.5rem;
-            color: $color__grey--light;
-            margin-bottom: 4rem;
-            line-height: 1.5;
-        }
-        &--buttons {
-            width: 90%;
-            &>* {
-                text-decoration: none;
-                margin-right: 2rem;
-                text-transform: uppercase;
-                padding: 1.2rem 2.5rem;
-                font-size: 1.4rem;
-                background-color: $color__primary;
-            }
-            &__book--demo {
-                color: $color__grey--light;
-                border: 2px solid $color__grey--light;
-                background-color: $color__white;
-                position: relative;
-                border-radius: 1rem;
-                font-weight: bold;
-                transition: background-color .5s ease;
-                & span {
-                    font-size: 1rem;
-                    position: absolute;
-                    top: 1.5rem;
-                    right: 2rem;
-                }
-                &:hover {
-                    background-color: $color__grey--light;
-                    color: $color__white;
-                }
-            }
-        }
-    }
-}
+  background-image: url(../images/header.png);
+  background-size: cover;
+  background-position: left;
+  height: 90vh;
+  border-top: 1px solid rgba(124, 122, 122, 0.342);
 
-@media only screen and (max-width: 1000px) {
-    .header {
-        background-position: 50%;
-        position: relative;
-        background-image: linear-gradient(to right, rgba($color__black, .2), rgba($color__black, .2)), url(../images/header.png);
-        &__content {
-            @include positionCenter;
-            margin: 0 auto;
-            width: 50%;
-            text-align: center;
-            &--heading__primery {
-                color: $color__white;
-                font-weight: bold;
-                font-size: 6rem;
-                margin-bottom: 3rem;
-                & span {
-                    font-size: 7rem;
-                }
-            }
-            &--text {
-                color: $color__white;
-                font-size: 1.8rem;
-                line-height: 1.7;
-                width: 80%;
-                margin: 1.6rem auto 6rem;
-            }
-            &--buttons {
-                width: 100%;
-                &>* {
-                    padding: 1.5rem 3.5rem;
-                }
-                &__book--demo {
-                    & span {
-                        font-size: 1.3rem;
-                        position: absolute;
-                        top: 1.2rem;
-                        right: 2rem;
-                    }
-                }
-            }
-        }
+  &__content {
+    display: inline-block;
+    position: absolute;
+    left: 15rem;
+    top: 30%;
+    width: 35%;
+
+    @include res(tab-land) {
+      @include positionCenter;
+      width: 50%;
+      height: 35rem;
     }
+
+    @include res(tab-port) {
+      width: 70%;
+      height: 50rem;
+    }
+
+    @include res(phone) {
+      width: 90%;
+      height: 60rem;
+    }
+
+    &--heading__primery {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: 100;
+      margin-bottom: 1rem;
+      color: $color__black;
+      font-family: Tahoma, sans-serif;
+      & span {
+        font-size: 5.6rem;
+        color: $color__primary;
+
+        @include res(tab-land) {
+          font-size: 7.5rem;
+        }
+
+        @include res(tab-port) {
+          font-size: 8.5rem;
+        }
+
+        @media only screen and (max-width: 450px) {
+          font-size: 6rem;
+        }
+      }
+
+      @include res(tab-land) {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+      }
+
+      @media only screen and (max-width: 450px) {
+        font-size: 3.3rem;
+      }
+    }
+    &--text {
+      font-size: 1.5rem;
+      color: $color__grey--light;
+      margin-bottom: 4rem;
+      line-height: 1.5;
+
+      @include res(tab-land) {
+        font-size: 2rem;
+      }
+
+      @include res(tab-port) {
+        font-size: 2.5rem;
+        margin-bottom: 6rem;
+      }
+    }
+    &--buttons {
+      width: 90%;
+      & > * {
+        text-decoration: none;
+        margin-right: 2rem;
+        text-transform: uppercase;
+        padding: 1.2rem 2.5rem;
+        font-size: 1.4rem;
+        background-color: $color__primary;
+
+        @include res(tab-land) {
+          padding: 1.6rem 3.5rem;
+          font-size: 1.8rem;
+          border-radius: 2rem;
+        }
+
+        @include res(tab-port) {
+          padding: 2rem 4.5rem;
+          font-size: 2.5rem;
+        }
+
+        @media only screen and (max-width: 450px) {
+          // width: 20rem;
+          // display: block;
+
+          padding: 1.5rem 3.5rem;
+          font-size: 1.5rem;
+          border-radius: 1rem;
+        }
+      }
+      &__book--demo {
+        color: $color__grey--light;
+        border: 2px solid $color__grey--light;
+        background-color: $color__white;
+        position: relative;
+        border-radius: 1rem;
+        font-weight: bold;
+        transition: background-color 0.5s ease;
+
+        @include res(tab-land) {
+          border-radius: 2rem;
+        }
+
+        @media only screen and (max-width: 450px) {
+          border-radius: 1rem;
+        }
+
+        &:hover {
+          background-color: $color__grey--light;
+          color: $color__white;
+        }
+      }
+    }
+  }
 }

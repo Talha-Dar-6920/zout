@@ -1,33 +1,27 @@
 //************************************************************
 //* BASIC RESET
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-}
+  font-size: 62.5%;
+  box-sizing: border-box;
 
-@media only screen and (max-width: 1260px) {
-    html {
-        font-size: 50%;
-        box-sizing: border-box;
-    }
-}
+  @include res(tab-land) {
+    font-size: 50%;
+  }
 
-@media only screen and (max-width: 1010px) {
-    html {
-        font-size: 40%;
-        box-sizing: border-box;
-    }
+  @include res(tab-port) {
+    font-size: 37%;
+  }
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
-    font-size: 1.5rem;
-    font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-size: 1.5rem;
+  font-family: sans-serif;
 }
