@@ -1,27 +1,61 @@
 //************************************************************
 //* EQUIPMENT SECTION
 .equipment {
-    width: 100%;
-    height: 110vh;
-    position: relative;
-    &__content {
-        @include positionCenter;
-        width: 80%;
-        margin: 5rem auto;
-        text-align: center;
-        &--heading__secendory {
-            @include heading__secendory;
-            margin-bottom: 1rem;
-            & span {
-                font-weight: bold;
-                color: $color__primary;
-            }
-        }
-        &--text {
-            @include text;
-        }
-        &--image {
-            width: 70%;
-        }
+  width: 100%;
+  height: 110vh;
+  position: relative;
+
+  @include res(tab-land) {
+    height: 100vh;
+  }
+
+  @include res(tab-port) {
+    height: 80vh;
+  }
+
+  @media only screen and (max-width: 450px) {
+    height: 60vh;
+  }
+  &__content {
+    @include positionCenter;
+    width: 80%;
+    margin: 5rem auto;
+    text-align: center;
+
+    @include res(tab-land) {
+      width: 100%;
+      margin: 3rem auto;
     }
+    &--heading__secendory {
+      @include heading__secendory;
+      margin-bottom: 1rem;
+      & span {
+        font-weight: bold;
+        color: $color__primary;
+      }
+
+      @include res(tab-port) {
+        font-size: 4rem;
+      }
+    }
+    &--text {
+      @include text;
+
+      @include res(tab-port) {
+        font-size: 2rem;
+        margin-bottom: 4rem;
+      }
+    }
+    &--image {
+      width: 70%;
+
+      @include res(tab-port) {
+        width: 80%;
+      }
+
+      @include res(phone) {
+        width: 90%;
+      }
+    }
+  }
 }

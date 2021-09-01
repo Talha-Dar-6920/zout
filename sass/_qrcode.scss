@@ -9,14 +9,10 @@
   @include res(tab-port) {
     flex-direction: column;
     margin-top: 10rem;
-    height: 85vh;
+    height: 100vh;
   }
 
   @include res(phone) {
-    height: 60vh;
-  }
-
-  @media only screen and (max-width: 400px) {
     height: 70vh;
   }
 
@@ -89,7 +85,7 @@
 
     @include res(tab-port) {
       position: absolute;
-      bottom: 50%;
+      bottom: 55%;
       right: 20%;
     }
 
