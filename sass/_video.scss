@@ -76,6 +76,10 @@
         object-fit: cover;
         z-index: -1;
       }
+
+      &__box {
+        position: relative;
+      }
     }
     &--play__button {
       @include positionCenter;

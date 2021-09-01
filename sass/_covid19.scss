@@ -14,8 +14,12 @@
     height: 75vh;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 450px) {
     height: 90vh;
+  }
+
+  @media only screen and (max-width: 350px) {
+    height: 100vh;
   }
   &__content {
     width: 50%;
@@ -75,7 +79,7 @@
         margin-left: 3rem;
 
         @include res(tab-port) {
-          font-size: 2rem;
+          font-size: 2.2rem;
           width: 90%;
         }
 
@@ -95,6 +99,10 @@
           left: 0rem;
           border-radius: 50%;
           border: 0.2rem solid $color__primary;
+
+          @include res(tab-port) {
+            margin-top: 0.8rem;
+          }
         }
       }
     }

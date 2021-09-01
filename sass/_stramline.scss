@@ -11,17 +11,21 @@
 
   @include res(phone) {
     margin-top: 10rem;
-    height: 200vh;
+    height: 240vh;
   }
 
   @media only screen and (max-width: 450px) {
     margin-top: 15rem;
-    height: 250vh;
+    height: 260vh;
     background-color: $color--primary;
   }
 
-  @media only screen and (max-width: 350px) {
+  @media only screen and (max-width: 450px) {
     margin-top: 25rem;
+  }
+
+  @media only screen and (max-width: 350px) {
+    margin-top: 30rem;
   }
 
   &__image {
@@ -47,11 +51,12 @@
 
     @include res(phone) {
       width: 85%;
-      height: 170vh;
+      height: 190vh;
     }
 
     @media only screen and (max-width: 450px) {
-      height: 220vh;
+      position: relative;
+      height: 240vh;
     }
     &--heading__secendory {
       @include heading__secendory;
@@ -95,6 +100,8 @@
           width: 100%;
           margin: 6rem 0 6rem 0;
           padding: 4rem;
+          border-radius: 1.5rem;
+          box-shadow: 2rem 2rem 1rem rgba($color__white, 0.5);
         }
 
         @media only screen and (max-width: 450px) {

@@ -12,6 +12,14 @@
   @include res(phone) {
     height: 200vh;
   }
+
+  @media only screen and (max-width: 450px) {
+    height: 220vh;
+  }
+
+  @media only screen and (max-width: 350px) {
+    height: 230vh;
+  }
   &__content {
     @include positionCenter;
     width: 80%;
