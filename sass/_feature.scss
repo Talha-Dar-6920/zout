@@ -1,0 +1,130 @@
+//************************************************************
+//* OTHER FEATURES SECTION
+
+.features {
+  height: 230vh;
+  position: relative;
+
+  @include res(tab-land) {
+    height: 180vh;
+  }
+
+  @include res(tab-port) {
+    height: 170vh;
+  }
+
+  @include res(phone) {
+    height: 330vh;
+  }
+
+  @media only screen and (max-width: 450px) {
+    height: 370vh;
+  }
+
+  &__content {
+    @include positionCenter;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    @include res(tab-land) {
+      width: 90%;
+    }
+
+    @include res(phone) {
+      width: 80%;
+    }
+
+    @media only screen and (max-width: 450px) {
+      width: 90%;
+    }
+
+    &--heading {
+      @include heading__secendory;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 4rem;
+      margin-bottom: 6rem;
+
+      & span {
+        font-weight: bold;
+        color: $color__primary;
+      }
+
+      @include res(tab-port) {
+        font-size: 5rem;
+      }
+    }
+
+    &--features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 28rem);
+      grid-gap: 3rem;
+
+      @include res(tab-port) {
+        grid-template-rows: repeat(4, 33rem);
+      }
+
+      @include res(phone) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 35rem);
+        grid-gap: 6rem;
+      }
+
+      @media only screen and (max-width: 450px) {
+        grid-template-rows: repeat(8, 40rem);
+      }
+
+      &__feature {
+        padding: 4rem 1rem;
+        border: 1px solid rgba(128, 128, 128, 0.616);
+        display: flex;
+
+        @include res(phone) {
+          padding: 3rem 1rem;
+          box-shadow: 1rem 1rem 1rem rgba(128, 128, 128, 0.308),
+            1rem 1rem 2rem rgba(128, 128, 128, 0.2);
+        }
+
+        &--left {
+          width: 40%;
+          position: relative;
+          z-index: 1;
+
+          &__image {
+            @include positionCenter;
+            width: 95%;
+            z-index: -1;
+          }
+        }
+
+        &--right {
+          width: 55%;
+          align-self: center;
+
+          &__heading {
+            margin-top: 1rem;
+            text-transform: uppercase;
+            font-size: 2rem;
+            color: rgba(0, 0, 0, 0.849);
+
+            @include res(phone) {
+              font-size: 2.5rem;
+            }
+          }
+
+          &__text {
+            @include text;
+            margin: 2rem 0;
+            text-align: justify;
+
+            @include res(phone) {
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
