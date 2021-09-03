@@ -5,13 +5,14 @@
   height: 100vh;
   position: relative;
   margin-top: -5rem;
-
-  @include res(tab-port) {
-    height: 160vh;
-  }
+  z-index: 1;
 
   @include res(tab-port) {
     height: 140vh;
+  }
+
+  @include res(phone) {
+    background-color: $color__primary;
   }
 
   &__bgimage {
@@ -21,6 +22,10 @@
     top: 0;
     left: 0;
     z-index: -1;
+
+    @include res(phone) {
+      display: none;
+    }
   }
   &__content {
     @include positionCenter;
