@@ -1,0 +1,189 @@
+//************************************************************
+//* FOOTER
+
+.footer {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color__footer;
+
+  @include res(tab-land) {
+    height: 70vh;
+  }
+
+  @include res(tab-port) {
+    height: 100vh;
+  }
+
+  @include res(phone) {
+    height: 200vh;
+  }
+
+  &__content {
+    height: 90%;
+    width: 80%;
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+
+    @include res(tab-land) {
+      width: 90%;
+    }
+
+    @include res(tab-port) {
+      width: 80%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 6rem;
+      padding-top: 10rem;
+    }
+
+    @include res(phone) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      text-align: center;
+    }
+
+    & > * {
+      padding: 0 3rem;
+    }
+
+    &--text {
+      margin: 3rem 0;
+      @include text;
+      font-size: 1.3rem;
+      width: 85%;
+      text-align: justify;
+
+      @include res(tab-port) {
+        font-size: 1.6rem;
+      }
+
+      @include res(phone) {
+        font-size: 2.2rem;
+        margin: 5rem auto;
+        text-align: center;
+      }
+    }
+
+    &--icons {
+      display: flex;
+
+      @include res(phone) {
+        justify-content: center;
+      }
+      & i {
+        background-color: $color__footer--dark;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: $color__primary;
+          color: $color__white;
+        }
+
+        @include res(tab-port) {
+          width: 7rem;
+          height: 7rem;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &--heading {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: $color__black--light;
+      margin-bottom: 1rem;
+
+      @include res(tab-port) {
+        font-size: 3rem;
+      }
+
+      @include res(phone) {
+        font-size: 4rem;
+      }
+    }
+
+    &--seperator {
+      display: inline-block;
+      height: 3px;
+      background-color: $color__primary;
+      width: 6rem;
+
+      @include res(tab-port) {
+        height: 4px;
+        width: 8rem;
+      }
+
+      @include res(phone) {
+        width: 15rem;
+        margin-bottom: 3rem;
+      }
+    }
+
+    &--list {
+      list-style: none;
+
+      & li {
+        margin: 1.5rem 0;
+
+        & a {
+          text-decoration: none;
+          color: $color__grey--light;
+
+          @include res(tab-port) {
+            font-size: 1.6rem;
+          }
+
+          @include res(phone) {
+            font-size: 2.2rem;
+          }
+        }
+      }
+    }
+
+    & > div:last-child {
+      & > h2:last-of-type {
+        margin-top: 5rem;
+      }
+    }
+  }
+
+  &__legals {
+    background-color: $color__footer--dark;
+    width: 100%;
+    height: 10rem;
+    position: relative;
+
+    &--container {
+      @include positionCenter;
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+
+      @include res(phone) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__payments {
+        @include res(phone) {
+          margin-top: 2rem;
+        }
+        & i {
+          font-size: 2.5rem;
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}
