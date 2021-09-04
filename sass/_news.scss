@@ -1,0 +1,145 @@
+//************************************************************
+//* NEWS SECTION
+
+.news {
+  height: 100vh;
+  position: relative;
+
+  @include res(phone) {
+    height: 210vh;
+    background-color: $color__primary;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @include res(phone) {
+      display: none;
+    }
+  }
+
+  &__content {
+    @include positionCenter;
+    width: 80%;
+    z-index: 1;
+
+    @media only screen and (max-width: 950px) {
+      width: 90%;
+    }
+
+    @include res(phone) {
+      width: 80%;
+    }
+
+    &--heading {
+      @include heading__secendory;
+      color: $color__white;
+      font-weight: bold;
+      text-align: center;
+
+      @include res(phone) {
+        margin-bottom: 10rem;
+      }
+    }
+
+    &--container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 40rem;
+      grid-gap: 4rem;
+
+      @media only screen and (max-width: 950px) {
+        grid-template-rows: 45rem;
+      }
+
+      @include res(tab-port) {
+        grid-template-rows: 55rem;
+        grid-gap: 2rem;
+      }
+
+      @include res(phone) {
+        grid-template-columns: 1fr;
+        row-gap: 6rem;
+      }
+
+      @media only screen and (max-width: 450px) {
+        grid-template-rows: 60rem;
+      }
+
+      &__news {
+        border-radius: 1.5rem;
+        background-color: $color__white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        height: 100%;
+
+        @include res(phone) {
+          align-items: flex-start;
+        }
+
+        &--image {
+          width: 100%;
+          height: 55%;
+          object-fit: cover;
+          border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        &--date {
+          background-color: $color__primary;
+          color: $color__white;
+          font-weight: bold;
+          display: inline-block;
+          padding: 0.5rem 2rem;
+          border-radius: 10rem;
+          font-size: 1.2rem;
+          position: absolute;
+          left: 3rem;
+          top: 52%;
+
+          @include res(phone) {
+            font-size: 2rem;
+            padding: 1rem 3rem;
+          }
+        }
+
+        &--heading {
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          margin: 4rem 3rem 0;
+          line-height: 1.5;
+
+          @include res(phone) {
+            font-size: 2.5rem;
+            margin: 6rem 4rem 1rem;
+          }
+
+          @media only screen and (max-width: 450px) {
+            margin: 5rem 3rem 1rem;
+          }
+        }
+
+        &--text {
+          @include text;
+          margin: 0 3rem;
+          font-size: 1.2rem;
+
+          @include res(phone) {
+            font-size: 2.2rem;
+            margin: 0 4rem;
+          }
+
+          @media only screen and (max-width: 450px) {
+            margin: 0 3rem;
+          }
+        }
+      }
+    }
+  }
+}
